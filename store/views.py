@@ -5,7 +5,7 @@ from rest_framework import status
 from rest_framework.filters import SearchFilter, OrderingFilter
 from .filters import ProductFilter
 from .models import Collection, Product, Review, Cart, CartItem, Customer
-from .serializers import CollectionSerializer, ProductSerializer, ReviewSerializer, CartSerializer, CartItemSerializer, AddCartItemSerializer, UpdateCartItemSerializer
+from .serializers import CollectionSerializer, ProductSerializer, CustomerSerializer, ReviewSerializer, CartSerializer, CartItemSerializer, AddCartItemSerializer, UpdateCartItemSerializer
 from rest_framework.viewsets import ModelViewSet, GenericViewSet
 from django_filters.rest_framework import DjangoFilterBackend
 from .pagination import DefaultPagination
@@ -75,6 +75,7 @@ class CartItemViewSet(ModelViewSet):
 
 class CustomerViewSet(CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, GenericViewSet):
     queryset = Customer.objects.all()
+    serializer_class = CustomerSerializer
 
 
 # @api_view(['GET', 'POST'])
