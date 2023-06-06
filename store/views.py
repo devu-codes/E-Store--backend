@@ -4,14 +4,14 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.filters import SearchFilter, OrderingFilter
 from .filters import ProductFilter
-from .models import Collection, Product, Review, Cart, CartItem, Customer
-from .serializers import CollectionSerializer, ProductSerializer, CustomerSerializer, ReviewSerializer, CartSerializer, CartItemSerializer, AddCartItemSerializer, UpdateCartItemSerializer
+from .models import Collection, Product, Review, Cart, CartItem, Customer, Order
+from .serializers import CollectionSerializer, ProductSerializer, CustomerSerializer, OrderSerializer, ReviewSerializer, CartSerializer, CartItemSerializer, AddCartItemSerializer, UpdateCartItemSerializer
 from rest_framework.viewsets import ModelViewSet, GenericViewSet
 from django_filters.rest_framework import DjangoFilterBackend
 from .pagination import DefaultPagination
 from rest_framework.mixins import CreateModelMixin, RetrieveModelMixin, DestroyModelMixin, UpdateModelMixin
 from rest_framework.decorators import action
-from .permissions import IsAdminOrReadOnly, FullDjangoPermissions
+from .permissions import IsAdminOrReadOnly, FullDjangoPermissions, ViewCustomerHistoryPermission
 from rest_framework.permissions import IsAuthenticated, DjangoModelPermissions, IsAdminUser
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
@@ -74,7 +74,7 @@ class CartItemViewSet(ModelViewSet):
     def get_queryset(self):
         return CartItem.objects.filter(cart_id=self.kwargs['cart_pk']).select_related('product')
 
-class CustomerViewSet(CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, GenericViewSet):
+class CustomerViewSet(ModelViewSet):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
     permission_classes = [IsAdminUser]
@@ -89,6 +89,13 @@ class CustomerViewSet(CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, Ge
             serializer.is_valid(raise_exception=True)
             serializer.save()
             return Response(serializer.data)
+    @action(detail=True,permission_classes=[ViewCustomerHistoryPermission])
+    def history(self, request, pk):
+        return Response('OK')
+
+class OrderViewSet(ModelViewSet):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
 
 # @api_view(['GET', 'POST'])
 # def product_list(request):
