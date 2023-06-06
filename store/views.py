@@ -5,7 +5,7 @@ from rest_framework import status
 from rest_framework.filters import SearchFilter, OrderingFilter
 from .filters import ProductFilter
 from .models import Collection, Product, Review, Cart, CartItem, Customer, Order
-from .serializers import CollectionSerializer, ProductSerializer, CustomerSerializer, OrderSerializer, ReviewSerializer, CartSerializer, CartItemSerializer, AddCartItemSerializer, UpdateCartItemSerializer
+from .serializers import CollectionSerializer, ProductSerializer, CustomerSerializer, OrderSerializer, CreateOrderSerializer, ReviewSerializer, CartSerializer, CartItemSerializer, AddCartItemSerializer, UpdateCartItemSerializer
 from rest_framework.viewsets import ModelViewSet, GenericViewSet
 from django_filters.rest_framework import DjangoFilterBackend
 from .pagination import DefaultPagination
@@ -97,6 +97,14 @@ class OrderViewSet(ModelViewSet):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
     permission_classes = [IsAuthenticated]
+
+    def get_serializer_class(self):
+        if self.request.method == "POST":
+            return CreateOrderSerializer
+        return OrderSerializer
+
+    def get_serializer_context(self):
+        return {'user_id': self.request.user.id}
 
     def get_queryset(self):
         if self.request.user.is_staff:
