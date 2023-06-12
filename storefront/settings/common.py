@@ -15,7 +15,7 @@ from datetime import timedelta
 from celery.schedules import crontab
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -215,18 +215,18 @@ CACHES = {
 }
 
 LOGGING = {
-    'version' : 1, 
-    'disable_existing_loggers' : False,
+    'version': 1,
+    'disable_existing_loggers': False,
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler'
         },
-        'file' : {
-            'class':'logging.FileHandler',
+        'file': {
+            'class': 'logging.FileHandler',
             'filename': 'general.log',
-            'formatter': 'verbose',
+            'formatter': 'verbose'
         }
-    }, 
+    },
     'loggers': {
         '': {
             'handlers': ['console', 'file'],
@@ -234,7 +234,9 @@ LOGGING = {
         }
     },
     'formatters': {
-        'verbose': '{asctime} ({levelname}) - {name} - {message}',
-        'style' : '{'
+        'verbose': {
+            'format': '{asctime} ({levelname}) - {name} - {message}',
+            'style': '{' 
+        }
     }
 }

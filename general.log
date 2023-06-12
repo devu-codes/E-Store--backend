@@ -1,0 +1,8 @@
+2023-06-12 18:13:47,947 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-06-12 18:13:48,101 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-12 18:13:53,966 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-06-12 18:13:54,096 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-12 18:18:56,489 (WARNING) - django.request - Unauthorized: /store/collections/
+2023-06-12 18:25:15,520 (INFO) - django.utils.autoreload - /home/ghost/Documents/Django/storefront/storefront/settings/common.py changed, reloading.
+2023-06-12 18:25:16,195 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-06-12 18:25:16,342 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
