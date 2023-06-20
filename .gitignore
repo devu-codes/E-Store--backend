@@ -2,3 +2,9 @@
 /media/
 /static/ 
 general.log
+online_store.pem
+pytest.ini 
+general
+celerybeat-schedule 
+likes/migrations 
+storefront/settings/dev.py 

@@ -6,3 +6,48 @@
 2023-06-12 18:25:15,520 (INFO) - django.utils.autoreload - /home/ghost/Documents/Django/storefront/storefront/settings/common.py changed, reloading.
 2023-06-12 18:25:16,195 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
 2023-06-12 18:25:16,342 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-12 18:39:36,783 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-06-12 18:39:36,914 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-12 18:39:50,297 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-12 19:46:31,731 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-12 19:48:09,667 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-06-12 19:48:09,781 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-13 15:01:02,265 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-06-13 15:01:02,797 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-13 15:13:48,040 (ERROR) - django.security.DisallowedHost - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ghost/.local/share/virtualenvs/storefront-C5CeUADk/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ghost/.local/share/virtualenvs/storefront-C5CeUADk/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ghost/.local/share/virtualenvs/storefront-C5CeUADk/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ghost/.local/share/virtualenvs/storefront-C5CeUADk/lib/python3.10/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2023-06-13 15:13:48,397 (WARNING) - django.request - Bad Request: /
+2023-06-13 15:13:48,503 (ERROR) - django.security.DisallowedHost - Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/home/ghost/.local/share/virtualenvs/storefront-C5CeUADk/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/ghost/.local/share/virtualenvs/storefront-C5CeUADk/lib/python3.10/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/home/ghost/.local/share/virtualenvs/storefront-C5CeUADk/lib/python3.10/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/home/ghost/.local/share/virtualenvs/storefront-C5CeUADk/lib/python3.10/site-packages/django/http/request.py", line 150, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+2023-06-13 15:13:48,549 (WARNING) - django.request - Bad Request: /favicon.ico
+2023-06-13 15:14:07,873 (INFO) - django.utils.autoreload - /home/ghost/Documents/Django/storefront/storefront/settings/common.py changed, reloading.
+2023-06-13 15:14:08,843 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-06-13 15:14:09,026 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-13 15:14:09,946 (WARNING) - django.request - Not Found: /favicon.ico
+2023-06-13 15:16:08,138 (INFO) - django.utils.autoreload - /home/ghost/Documents/Django/storefront/storefront/settings/dev.py changed, reloading.
+2023-06-13 15:16:08,800 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-06-13 15:16:08,951 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-13 15:18:00,870 (INFO) - django.utils.autoreload - /home/ghost/Documents/Django/storefront/storefront/settings/dev.py changed, reloading.
+2023-06-13 15:18:01,496 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-06-13 15:18:01,615 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
+2023-06-13 15:18:02,939 (INFO) - django.utils.autoreload - /home/ghost/Documents/Django/storefront/storefront/settings/dev.py changed, reloading.
+2023-06-13 15:18:03,548 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
+2023-06-13 15:18:03,663 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
